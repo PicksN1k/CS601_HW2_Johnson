@@ -1,0 +1,24 @@
+{
+  "name": "cs601_hw2_johnson",
+  "version": "1.0.0",
+  "description": "To get this project to work via local hosting I used Express. To do the same follow these steps in the terminal. \r 1. node -e \"require('child_process').execSync('npm init -y', {stdio: 'inherit'})\"\r 2. node -e \"require('child_process').execSync('npm install express', {stdio: 'inherit'})\"\r 3. node server.js\r 3 ctrl + click on the localhost:3000",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PicksN1k/CS601_HW2_Johnson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PicksN1k/CS601_HW2_Johnson/issues"
+  },
+  "homepage": "https://github.com/PicksN1k/CS601_HW2_Johnson#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
