@@ -1,26 +1,38 @@
-const itemArea = document.getElementById("item-area");
-const allItems = [...itemsData.fruits, ...itemsData.vegetables];
 let correctDrops = 0;
-const totalItems = allItems.length;
+let totalItems = 0;
 
-allItems.forEach(item => {
-  const img = document.createElement("img");
-  img.src = item.img;
-  img.alt = item.name;
-  img.draggable = true;
-  img.classList.add("draggable");
-  img.dataset.category = item.category.toLowerCase();
+// Fetch JSON data asynchronously
+fetch("items.json")
+  .then(response => {
+    if (!response.ok) throw new Error("Network error");
+    return response.json();
+  })
+  .then(data => {
+    const itemArea = document.getElementById("item-area");
+    const allItems = [...data.fruits, ...data.vegetables];
+    totalItems = allItems.length;
 
-  img.addEventListener("dragstart", e => {
-    e.dataTransfer.setData("type", img.dataset.category);
-    e.dataTransfer.setData("src", img.src);
-    e.dataTransfer.setData("alt", img.alt);
-  });
+    // Create draggable images
+    allItems.forEach(item => {
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.name;
+      img.draggable = true;
+      img.classList.add("draggable");
+      img.dataset.category = item.category.toLowerCase();
 
-  itemArea.appendChild(img);
-});
+      img.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("type", img.dataset.category);
+        e.dataTransfer.setData("src", img.src);
+        e.dataTransfer.setData("alt", img.alt);
+      });
 
-setupDropZones();
+      itemArea.appendChild(img);
+    });
+
+    setupDropZones();
+  })
+  .catch(err => console.error("Error loading items.json:", err));
 
 function setupDropZones() {
   const dropzones = document.querySelectorAll(".dropzone");
@@ -40,14 +52,12 @@ function setupDropZones() {
       const type = e.dataTransfer.getData("type");
       const src = e.dataTransfer.getData("src");
       const alt = e.dataTransfer.getData("alt");
-
-      const draggedImg = [...itemArea.children].find(img => img.alt === alt);
+      const draggedImg = [...document.getElementById("item-area").children].find(img => img.alt === alt);
 
       if (
         (zone.id === "fruit-zone" && type === "fruit") ||
         (zone.id === "vegetable-zone" && type === "vegetable")
       ) {
-        // Add image to basket
         const droppedImg = document.createElement("img");
         droppedImg.src = src;
         droppedImg.alt = alt;
@@ -55,16 +65,9 @@ function setupDropZones() {
         droppedImg.style.margin = "0.4em";
         zone.appendChild(droppedImg);
 
-        // Remove from selection
         if (draggedImg) draggedImg.remove();
-
         correctDrops++;
 
-        // Auto-expand basket height if needed
-        zone.style.height = "auto";
-        zone.style.minHeight = "300px";
-
-        // Check if all items are sorted
         if (correctDrops === totalItems) showCongrats();
       } else {
         alert(`❌ ${alt} does not belong here!`);
@@ -73,7 +76,6 @@ function setupDropZones() {
   });
 }
 
-// 🎉 Show congrats banner
 function showCongrats() {
   const message = document.getElementById("congrats-message");
   message.style.display = "block";
@@ -83,9 +85,6 @@ function showCongrats() {
       { opacity: 1, transform: "scale(1.1)" },
       { opacity: 1, transform: "scale(1)" }
     ],
-    {
-      duration: 1000,
-      easing: "ease-out"
-    }
+    { duration: 1000, easing: "ease-out" }
   );
 }
