@@ -9,3 +9,28 @@ To get this project to work via local hosting I used Express. To do the same fol
 3 ctrl + click on the localhost:3000
 
 Otherwise for testing purposes you can run through the HTml file if local hosting is not required at the time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All images are from flaticon.com

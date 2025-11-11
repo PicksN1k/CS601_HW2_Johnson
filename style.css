@@ -4,60 +4,93 @@ body {
   text-align: center;
   margin: 0;
   padding: 2em;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h1 {
   color: #333;
   margin-bottom: 1.5em;
+  font-size: 1.8em;
 }
 
 #item-area {
   display: flex;
   justify-content: center;
-  gap: 1em;
   flex-wrap: wrap;
-  margin-bottom: 2em;
+  gap: 2em;
+  margin-bottom: 3em;
 }
 
+
 .draggable {
-  width: 90px;
-  height: 90px;
+  width: 130px;
+  height: 130px;
   cursor: grab;
-  border-radius: 10px;
+  border-radius: 16px;
   background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .draggable:hover {
   transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
+
 
 .dropzones {
   display: flex;
   justify-content: center;
-  gap: 3em;
+  align-items: flex-end;
+  gap: 6em;
+  margin-bottom: 3em;
 }
 
 .dropzone {
-  border: 3px dashed #bbb;
-  border-radius: 12px;
-  width: 250px;
-  height: 250px;
+  border: 4px dashed #bbb;
+  border-radius: 20px;
+  width: 400px;
+  min-height: 300px;
   background: #fff;
   padding: 1em;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.6em;
+  overflow: visible;
 }
 
 .dropzone h2 {
   margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
 }
 
 .dropzone.dragover {
   background: #e8fbe8;
+  transform: scale(1.05);
 }
 
 .dropzone img {
-  width: 70px;
-  margin: 0.3em;
+  width: 100px;
+  margin: 0.4em;
+}
+#congrats-message {
+  display: none;
+  font-size: 1.6em;
+  color: #2ecc71;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
 }

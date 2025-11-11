@@ -1,16 +1,16 @@
-{
-  "fruits": [
-    { "id": 1, "name": "Apple", "category": "Fruit", "img": "images/apple.png" },
-    { "id": 2, "name": "Banana", "category": "Fruit", "img": "images/banana.png" },
-    { "id": 3, "name": "Cherry", "category": "Fruit", "img": "images/cherry.png" },
-    { "id": 4, "name": "Mango", "category": "Fruit", "img": "images/mango.png" },
-    { "id": 5, "name": "Orange", "category": "Fruit", "img": "images/orange.png" }
+const itemsData = {
+  fruits: [
+    { id: 1, name: "Apple", category: "Fruit", img: "images/apple.png" },
+    { id: 2, name: "Banana", category: "Fruit", img: "images/banana.png" },
+    { id: 3, name: "Cherry", category: "Fruit", img: "images/cherry.png" },
+    { id: 4, name: "Mango", category: "Fruit", img: "images/mango.png" },
+    { id: 5, name: "Orange", category: "Fruit", img: "images/orange.png" }
   ],
-  "vegetables": [
-    { "id": 1, "name": "Carrot", "category": "Vegetable", "img": "images/carrot.png" },
-    { "id": 2, "name": "Broccoli", "category": "Vegetable", "img": "images/broccoli.png" },
-    { "id": 3, "name": "Spinach", "category": "Vegetable", "img": "images/spinach.png" },
-    { "id": 4, "name": "Potato", "category": "Vegetable", "img": "images/potato.png" },
-    { "id": 5, "name": "Tomato", "category": "Vegetable", "img": "images/tomato.png" }
+  vegetables: [
+    { id: 1, name: "Carrot", category: "Vegetable", img: "images/carrot.png" },
+    { id: 2, name: "Broccoli", category: "Vegetable", img: "images/broccoli.png" },
+    { id: 3, name: "Spinach", category: "Vegetable", img: "images/spinach.png" },
+    { id: 4, name: "Potato", category: "Vegetable", img: "images/potato.png" },
+    { id: 5, name: "Cucumber", category: "Vegetable", img: "images/cucumber.png" }
   ]
-}
+};
