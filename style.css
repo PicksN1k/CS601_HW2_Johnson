@@ -1,0 +1,36 @@
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.draggable {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  color: white;
+  align-items: center;
+  background-color: orange;
+  justify-content: center;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.draggable:hover {
+  background-color: orangered;
+}
+
+.draggable.dragging {
+  border: 2px dashed white;
+  opacity: 0.1;
+}
+
+.dropzone {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border: 2px dashed #ccc;
+}
