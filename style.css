@@ -1,36 +1,63 @@
-.container {
-  padding: 20px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f8fa;
+  text-align: center;
+  margin: 0;
+  padding: 2em;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1.5em;
+}
+
+#item-area {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
 }
 
 .draggable {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  color: white;
-  align-items: center;
-  background-color: orange;
-  justify-content: center;
-  border: 2px solid black;
-  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  cursor: grab;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .draggable:hover {
-  background-color: orangered;
+  transform: scale(1.1);
 }
 
-.draggable.dragging {
-  border: 2px dashed white;
-  opacity: 0.1;
+.dropzones {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
 }
 
 .dropzone {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
-  border: 2px dashed #ccc;
+  border: 3px dashed #bbb;
+  border-radius: 12px;
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  padding: 1em;
+  transition: background 0.3s ease;
+}
+
+.dropzone h2 {
+  margin-top: 0;
+}
+
+.dropzone.dragover {
+  background: #e8fbe8;
+}
+
+.dropzone img {
+  width: 70px;
+  margin: 0.3em;
 }

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Drag and Drop Example</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit & Veggie Sorter</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-  <div class="draggable" draggable="true" id="drag-item">Drag me</div>
-  <div class="dropzone" id="drop-zone">Drop here</div>
-</div>
+  <h1>🍎 Drag the items into the correct basket 🥦</h1>
 
-    <script src="script.js"></script>
+  <div id="item-area"></div>
+
+  <div class="dropzones">
+    <div class="dropzone" id="fruit-zone">
+      <h2>🍎 Fruits</h2>
+    </div>
+    <div class="dropzone" id="vegetable-zone">
+      <h2>🥦 Vegetables</h2>
+    </div>
+  </div>
+  
+  <script src="items.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
